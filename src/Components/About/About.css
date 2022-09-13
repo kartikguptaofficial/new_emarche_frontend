@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.about-brand{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    width: 70%;
+    margin: 5rem auto;
+}
+
+.about-brand img{
+    height: 8rem;
+    border-radius: 8px;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+}
+
+.about-founders{
+    width: 70%;
+    margin: 3rem auto;
+    text-align: center;
+}
+
+.about-founders h3{
+    font-size: 3rem;
+    font-family: 'Homemade Apple', sans-serif;
+}
+
+.founders{
+    display: flex;
+    justify-content: space-around;
+    margin: 4rem 0;
+}
+
+.founders h6{
+    font-size: 1.5rem;
+    font-family: 'Quicksand', sans-serif;
+    padding: 1rem 5rem;
+    border-radius: 8px;
+    box-shadow: 4px 4px 8px rgba(0,0,0,0.6);
+    background-color: rgb(250,250,250);
+}

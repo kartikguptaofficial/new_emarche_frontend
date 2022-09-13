@@ -1,0 +1,121 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "name": "UNISEX SNEAKERS COPY AIR JORDAN",
+            "costprice": 484,
+            "sellingprice": 649,
+            "gender": "unisex",
+            "category": "footwear",
+            "img1": "https://images.meesho.com/images/products/114739658/5tfbr_512.webp"
+        },
+        {
+            "id": 2,
+            "name": "Trendy Graceful Men Tshirt",
+            "costprice": 227,
+            "sellingprice": 349,
+            "gender": "male",
+            "category": "clothing",
+            "img1": "https://images.meesho.com/images/products/74320697/0ngcg_512.webp"
+        },
+        {
+            "id": 3,
+            "name": "Trendy Latest Men Tshirts",
+            "costprice": 191,
+            "sellingprice": 299,
+            "gender": "male",
+            "category": "clothing",
+            "img1": "https://images.meesho.com/images/products/50389616/fvga8_512.webp"
+        },
+        {
+            "id": 3,
+            "name": "Trendy Latest Men Tshirts",
+            "costprice": 191,
+            "sellingprice": 299,
+            "gender": "male",
+            "category": "clothing",
+            "img1": "https://images.meesho.com/images/products/50389616/fvga8_512.webp"
+        },
+        {
+            "id": 3,
+            "name": "Trendy Latest Men Tshirts",
+            "costprice": 191,
+            "sellingprice": 299,
+            "gender": "male",
+            "category": "clothing",
+            "img1": "https://images.meesho.com/images/products/50389616/fvga8_512.webp"
+        },
+        {
+            "id": 3,
+            "name": "Trendy Latest Men Tshirts",
+            "costprice": 191,
+            "sellingprice": 299,
+            "gender": "male",
+            "category": "clothing",
+            "img1": "https://images.meesho.com/images/products/50389616/fvga8_512.webp"
+        },
+        {
+            "id": 3,
+            "name": "Trendy Latest Men Tshirts",
+            "costprice": 191,
+            "sellingprice": 299,
+            "gender": "male",
+            "category": "clothing",
+            "img1": "https://images.meesho.com/images/products/50389616/fvga8_512.webp"
+        },
+        {
+            "id": 3,
+            "name": "Trendy Latest Men Tshirts",
+            "costprice": 191,
+            "sellingprice": 299,
+            "gender": "male",
+            "category": "clothing",
+            "img1": "https://images.meesho.com/images/products/50389616/fvga8_512.webp"
+        },
+        {
+            "id": 3,
+            "name": "Trendy Latest Men Tshirts",
+            "costprice": 191,
+            "sellingprice": 299,
+            "gender": "male",
+            "category": "clothing",
+            "img1": "https://images.meesho.com/images/products/50389616/fvga8_512.webp"
+        },
+        {
+            "id": 3,
+            "name": "Men Black Sports Shoes - Sneakers",
+            "costprice": 455,
+            "sellingprice": 549,
+            "gender": "male",
+            "category": "footwear",
+            "img1": "https://images.meesho.com/images/products/76169445/ipekd_512.webp"
+        },
+        {
+            "id": 5,
+            "name": "Sports Digital watch black",
+            "costprice": 121,
+            "sellingprice": 199,
+            "gender": "unisex",
+            "category": "watches",
+            "img1": "https://images.meesho.com/images/products/146073088/stuho_512.webp"
+        },
+        {
+            "id": 6,
+            "name": "Full Sleeves Crop Top",
+            "costprice": 201,
+            "sellingprice": 299,
+            "gender": "female",
+            "category": "clothing",
+            "img1": "https://images.meesho.com/images/products/76475323/tfqbd_512.webp"
+        },
+        {
+            "id": 7,
+            "name": "Mobile Holders",
+            "costprice": 228,
+            "sellingprice": 299,
+            "gender": "unisex",
+            "category": "mobile accessories",
+            "img1": "https://images.meesho.com/images/products/32037400/1shvl_512.webp"
+        }
+    ]
+}

@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.contact-page{
+    width: 70%;
+    margin: 4rem auto;
+    text-align: center;
+}
+
+.contact-social-media{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 4rem 0;
+}
+
+.contact-on{
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    text-align: center;
+    text-decoration: none;
+}
+
+.contact-on img{
+    height: 3rem;
+}
+
+.contact-email form{
+    width: 80%;
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-email form input{
+    height: 2.5rem;
+    border-radius: 6px;
+    border: 1px solid grey;
+    padding-left: 1rem;
+}
+
+.contact-email form textarea{
+    border-radius: 6px;
+    border: 1px solid grey;
+    padding-left: 1rem;
+}

@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.signup-page{
+    width: 70%;
+    margin: 4rem auto;
+}
+
+.signup-page h3{
+    text-align: center;
+}
+
+.signup-page form{
+    width: 70%;
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.signup-page form input{
+    height: 2rem;
+    border-radius: 6px;
+    border: 1px solid grey;
+}
+
+.signup-page a{
+    margin-left: 24rem; 
+    text-decoration: none;
+}

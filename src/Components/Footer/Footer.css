@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.footer{
+    background-color: rgb(50,50,50);
+    color: white;
+    padding: 4rem 5rem 2rem 5rem;
+}
+
+.upper-footer{
+    display: flex;
+    justify-content: space-around;
+}
+
+.upper-footer div h2{
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.upper-footer div ul{
+    list-style: none;
+    margin-left: -2rem
+}
+
+.upper-footer div ul li{
+    font-size: 0.9rem;
+}
+
+.upper-footer div ul li a{
+    text-decoration: none;
+    color: white;
+}
+
+.brand-content{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.brand-content img{
+    height: 3rem;
+    margin-top: -0.8rem;
+}
+
+.brand-name h3{
+    font-size: 1.5rem;
+    /* margin-bottom: -0.1rem; */
+}
+
+.brand-name p{
+    font-size: 0.7rem;
+}
+
+.lower-footer{
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.social-icons{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.social-icons a{
+    color: rgb(245,230,230);
+    padding: 0.7rem;
+}
+
+.social-icons i{
+    font-size: 1.5rem;
+}
+
+@media all and (max-width: 420px){
+    .footer{
+        padding: 3rem 1rem;
+    }
+
+    .brand-content{
+        gap: 0.2rem;
+    }
+
+    .brand-content img{
+        height: 1rem;
+        margin-top: -1rem;
+    }
+
+    .brand-details p{
+        font-size: 0.6rem;
+    }
+
+    .brand-name h3{
+        font-size: 0.8rem;
+    }
+
+    .brand-name p{
+        font-size: 0.4rem;
+        margin-top: -0.5rem;
+    }
+
+    .brand-details p{
+        font-size: 0.5rem;
+    }
+
+    .upper-footer div h2{
+        font-size: 0.6rem;
+    }
+
+    .upper-footer div ul li{
+        font-size: 0.5rem;
+    }
+
+    .lower-footer p{
+        font-size: 0.7rem;
+    }
+
+    .social-icons{
+        margin: 0;
+        margin-bottom: -2rem;
+        gap: 0.5rem;
+    }
+
+    .social-icons i{
+        font-size: 1.2rem;
+    }
+}

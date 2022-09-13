@@ -1,0 +1,186 @@
+import React, { useEffect, useState } from 'react'
+import './Admin.css';
+import Footer from '../Footer/Footer'
+import Navbar from '../Navbar/Navbar'
+import { Link, useParams } from 'react-router-dom';
+
+export default function Admin() {
+
+    // const [showPage, setShowPage] = useState();
+
+    const [name, setName] = useState("");
+    const [description, setDescription] = useState("");
+    const [costprice, setcostPrice] = useState("");
+    const [sellingprice, setSellingPrice] = useState("");
+    const [category, setCategory] = useState("");
+    const [gender, setGender] = useState("");
+    const [img1, setImg1] = useState("");
+    const [img2, setImg2] = useState("");
+    const [img3, setImg3] = useState("");
+    const [img4, setImg4] = useState("");
+
+    const show = useParams();
+    console.log(show.show);
+    const showPage = show.show;
+    // setShowPage(show.show)
+
+    async function sendData(e) {
+        e.preventDefault();
+
+        const send = await fetch("https://emarche-backend.herokuapp.com/admin", {
+            method: "POST",
+            headers: {
+                'Content-Type': "application/json"
+            },
+            body: JSON.stringify({ name, description, costprice, sellingprice, category, gender, img1, img2, img3, img4 })
+        })
+        if (send) {
+            window.alert("Product is added successfully")
+        }
+    }
+
+    useEffect(() => {
+        document.title = "Admin Panel | E Marché"
+    }, [])
+        
+
+    return (
+        <div>
+            <Navbar />
+
+            <div className="whole-page">
+
+                <div className="sidebar">
+                    <h4>Admin Panel</h4>
+                    <p>Welcome, Admin</p>
+                    <hr />
+                    <ul className='sidebar-list'>
+                        <li><Link to="/admin/add-product">Add Products</Link></li>
+                        <li><Link to="/admin/view-products">View Products</Link></li>
+                        <li><Link to="/admin/sales-report">Sales Report</Link></li>
+                        <li><Link to="/admin/pending-orders">Pending Orders</Link></li>
+                    </ul>
+                </div>
+                <div className="admin-panel">
+                    {
+                        showPage === 'add-product' ?
+                            <div className='add-product-page'>
+                                <h3>Add Product</h3>
+                                <form action="/admin" method='POST' onSubmit={sendData}>
+                                    <label htmlFor="name">Name</label>
+                                    <input type="text" name='name' id='name' value={name} onChange={(e) => setName(e.target.value)} />
+                                    <label htmlFor="description">Description</label>
+                                    <textarea name="description" id="description" cols="30" rows="2" value={description} onChange={(e) => setDescription(e.target.value)}></textarea>
+                                    <label htmlFor="costprice">Cost Price</label>
+                                    <input type="number" name='costprice' id='costprice' value={costprice} onChange={(e) => setcostPrice(e.target.value)} />
+                                    <label htmlFor="sellingprice">Selling Price</label>
+                                    <input type="number" name='sellingprice' id='sellingprice' value={sellingprice} onChange={(e) => setSellingPrice(e.target.value)} />
+                                    <label htmlFor="category">Category</label>
+                                    <select name="category" id="category" value={category} onChange={(e) => setCategory(e.target.value)}>
+                                        <option value="">-Select-</option>
+                                        <option value="clothing">Clothing</option>
+                                        <option value="footwear">Footwear</option>
+                                        <option value="watches">Watches</option>
+                                    </select>
+                                    <label htmlFor="gender">Gender</label>
+                                    <select name="gender" id="gender" value={gender} onChange={(e) => setGender(e.target.value)}>
+                                        <option value="">-Select-</option>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                    </select>
+                                    <label htmlFor="img1">Image 1 URL</label>
+                                    <input type="text" name='img1' id='img1' value={img1} onChange={(e) => setImg1(e.target.value)} />
+                                    <label htmlFor="img2">Image 2 URL</label>
+                                    <input type="text" name='img2' id='img2' value={img2} onChange={(e) => setImg2(e.target.value)} />
+                                    <label htmlFor="img3">Image 3 URL</label>
+                                    <input type="text" name='img3' id='img3' value={img3} onChange={(e) => setImg3(e.target.value)} />
+                                    <label htmlFor="img4">Image 4 URL</label>
+                                    <input type="text" name='img4' id='img4' value={img4} onChange={(e) => setImg4(e.target.value)} />
+                                    <button type="submit" className='btn btn-danger'>Add Product</button>
+                                </form>
+                            </div> :
+                            ''
+                    }
+                    {
+                        showPage === "view-products" ?
+                            <div className="view-products-page">
+                                <h3>View Products</h3>
+                            </div> :
+                            ''
+                    }
+                    {
+                        showPage === "sales-report" ?
+                            <div className="sales-report-page">
+                                <h3>Sales Report</h3>
+                                <div className="sales-list">
+                                    <div className="progress-circles">
+                                        <div className='sales-circle'>
+                                            <h6 className='total-sales'>1</h6>
+                                            <h6>Total Sales</h6>
+                                        </div>
+                                        <div className='return-circle'>
+                                            <h6 className='total-returns'>0</h6>
+                                            <h6>Total Returns</h6>
+                                        </div>
+                                        <div className='products-circle'>
+                                            <h6 className='total-products'>45</h6>
+                                            <h6>Total Products</h6>
+                                        </div>
+                                    </div>
+                                    <div className='sales-list-content'>
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">SNo.</th>
+                                                    <th scope="col">Product ID</th>
+                                                    <th scope="col">Customer Name</th>
+                                                    <th scope='col'>Date of Order</th>
+                                                    <th scope='col'>Delivery Date</th>
+                                                    <th scope="col">Selling Price</th>
+                                                    <th scope='col'>Cost Price</th>
+                                                    <th scope='col'>Profit Earned</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">1</th>
+                                                    <td>15412654348431254254</td>
+                                                    <td>Kshitij Soni</td>
+                                                    <td>10/06/2022</td>
+                                                    <td>14/06/2022</td>
+                                                    <td>300</td>
+                                                    <td>224</td>
+                                                    <td className='total-profit'>76</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>1</th>
+                                                    <th>TOTAL</th>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <th>300</th>
+                                                    <td></td>
+                                                    <th>76</th>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div> :
+                            ''
+                    }
+                    {
+                        showPage === "pending-orders" ?
+                            <div className="pending-orders-page">
+                                <h3>Pending Orders</h3>
+                            </div> :
+                            ''
+                    }
+                </div>
+
+            </div>
+
+            <Footer />
+        </div>
+    )
+}
