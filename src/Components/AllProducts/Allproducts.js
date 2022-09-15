@@ -26,23 +26,6 @@ export default function Allproducts() {
         }
     }
 
-    // let filterProducts;
-    // if (category.category) {
-    //     filterProducts = products.filter((item) => {
-    //         return item.category == category.category;
-    //     })
-    // }
-    // if(category.filter){
-    //     return item.gender == category.filter;
-    // }
-    // if(category.filter === "male"){
-    //     filterProducts = filterProducts.filter((item) => {
-    //         return item.gender == 'male';
-    //     })
-    // }
-    // console.log(filterProducts)
-
-    
 
     useEffect(() => {
         getProducts();
@@ -52,44 +35,78 @@ export default function Allproducts() {
         <div>
             <Navbar />
 
-                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Enable body scrolling</button>
+                <a type="button" className='filter-btn-resp' data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Add Filters</a>
 
                 <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
                     <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Offcanvas with body scrolling</h5>
+                        <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Add Filters</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
-                        <p>Try scrolling the rest of the page to see this option in action.</p>
-                        <p>Hello guys</p>
+                    <p>Showing results: {category.category}/{category.gender}</p>
+                    <h6>FILTERS</h6>
+                        {
+                            category.category === "clothing" || category.category === "footwear" ?
+                            <ul className='gender-filter filter-list'>
+                                <h6>Gender</h6>
+                                <li><a href={`/allproducts/${category.category}/male/${category.filter}`}>Male</a></li>
+                                <li><a href={`/allproducts/${category.category}/female/${category.filter}`}>Female</a></li>
+                                <li><a href={`/allproducts/${category.category}/both/${category.filter}`}>All</a></li>
+                            </ul> : ''
+                        }
+
+                        <ul className='sort-filter filter-list'>
+                            <h6>Sort-By</h6>
+                            <li><a href={`/allproducts/${category.category}/${category.gender}/lowtohigh`}>Price - Low to High</a></li>
+                            <li><a href={`/allproducts/${category.category}/${category.gender}/hightolow`}>Price- High to Low</a></li>
+                        </ul>
+
+                        <ul className='price-filter filter-list'>
+                            <h6>Categories</h6>
+                            <li><a href={`/allproducts/clothing/${category.gender}/all`}>Clothing</a></li>
+                            <li><a href={`/allproducts/footwear/${category.gender}/all`}>Footwear</a></li>
+                            <li><a href={`/allproducts/watches/both/all`}>Watches</a></li>
+                            <li><a href={`/allproducts/jewellery/${category.gender}/all`}>Jewellery</a></li>
+                            <li><a href={`/allproducts/apparel-accessories/${category.gender}/all`}>Apparel Accessories</a></li>
+                            <li><a href={`/allproducts/electronics-accessories/both/all`}>Electronic Accessories</a></li>
+                        </ul>
+
                     </div>
                 </div>
+
                 <div className="whole-page">
                 <div className="sidebar">
+                    <p>Showing results: {category.category}/{category.gender}</p>
                     <h6>FILTERS</h6>
 
-                    <ul className='gender-filter filter-list'>
-                        <h6>Gender</h6>
-                        <li><a href={`/allproducts/${category.category}/male/${category.filter}`}>Male</a></li>
-                        <li><a href={`/allproducts/${category.category}/female/${category.filter}`}>Female</a></li>
-                    </ul>
+                    {
+                        category.category === "clothing" || category.category === "footwear" || category.category === "apparel-accessories" ?
+                        <ul className='gender-filter filter-list'>
+                            <h6>Gender</h6>
+                            <li><a href={`/allproducts/${category.category}/male/${category.filter}`}>Male</a></li>
+                            <li><a href={`/allproducts/${category.category}/female/${category.filter}`}>Female</a></li>
+                            <li><a href={`/allproducts/${category.category}/both/${category.filter}`}>All</a></li>
+                        </ul> : ''
+                    }
 
                     <ul className='sort-filter filter-list'>
                         <h6>Sort-By</h6>
-                        {/* <li><input type="checkbox" name="" id="lowToHigh" /><span>Price- Low to High</span></li> */}
                         <li><a href={`/allproducts/${category.category}/${category.gender}/lowtohigh`}>Price - Low to High</a></li>
                         <li><a href={`/allproducts/${category.category}/${category.gender}/hightolow`}>Price- High to Low</a></li>
                     </ul>
 
                     <ul className='price-filter filter-list'>
-                        <h6>Price</h6>
-                        <li><input type="checkbox" name="" id="" /><span>under 500</span></li>
-                        <li><input type="checkbox" name="" id="" /><span>500-1000</span></li>
-                        <li><input type="checkbox" name="" id="" /><span>1000-2000</span></li>
-                        <li><input type="checkbox" name="" id="" /><span>2000 & above</span></li>
+                        <h6>Categories</h6>
+                        <li><a href={`/allproducts/clothing/both/all`}>Clothing</a></li>
+                        <li><a href={`/allproducts/footwear/both/all`}>Footwear</a></li>
+                        <li><a href={`/allproducts/watches/both/all`}>Watches</a></li>
+                        <li><a href={`/allproducts/jewellery/both/all`}>Jewellery</a></li>
+                        <li><a href={`/allproducts/apparel-accessories/both/all`}>Apparel Accessories</a></li>
+                        <li><a href={`/allproducts/mobile-accessories/both/all`}>Mobile Accessories</a></li>
                     </ul>
 
                 </div>
+
                 <div className="products-area">
                     {
                         products.map((item) => {

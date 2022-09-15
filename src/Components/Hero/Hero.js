@@ -5,6 +5,21 @@ import topleftImg from '../../Images/baner-right-image-01.jpg';
 import toprightImg from '../../Images/baner-right-image-02.jpg';
 import bottomleftImg from '../../Images/baner-right-image-03.jpg';
 import bottomrightImg from '../../Images/baner-right-image-04.jpg';
+import banner1 from '../../Images/banner1.png';
+import banner3 from '../../Images/banner3.png';
+
+import { useRef } from "react";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+// import required modules
+import { Pagination, Navigation, Autoplay } from "swiper";
+
 
 export default function Hero() {
   return (
@@ -31,8 +46,8 @@ export default function Hero() {
                     <h6>Kids</h6>
                     <img src={bottomleftImg} alt="" />
                 </a>
-                <a href="" className='right-img-href'>
-                    <h6>Explore</h6>
+                <a href="/allproducts/apparel-accessories/both/all" className='right-img-href'>
+                    <h6>Accessories</h6>
                     <img src={bottomrightImg} alt="" />
                 </a>
                 
@@ -56,6 +71,24 @@ export default function Hero() {
                 <i class="fa-solid fa-phone-volume"></i>
                 <h6>24/7 Support</h6>
             </div>
+        </div>
+
+        <div className="main-banners">
+            <Swiper
+                spaceBetween={15}
+                autoplay={{
+                    delay: 2000,
+                    disableOnInteraction: false,
+                }}
+                pagination={{
+                clickable: true,
+                }}
+                modules={[Autoplay, Pagination, Navigation]}
+                className="mySwiper"
+            >
+                <SwiperSlide><img src={banner1} alt="" /></SwiperSlide>
+                <SwiperSlide><img src={banner3} alt="" /></SwiperSlide>
+            </Swiper>
         </div>
 
     </div>

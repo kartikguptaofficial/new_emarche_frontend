@@ -26,6 +26,7 @@
 .product-div-heading h2{
     font-family: 'Poppins', sans-serif;
     color: rgb(88, 88, 88);
+    margin-bottom: 3rem;
 }
 
 .product-div-heading a{
@@ -62,6 +63,19 @@
 
 .card-buttons a{
     font-size: 0.8rem;
+}
+
+.category-product-banners{
+    height: 20rem;
+    width: 100%;
+    /* object-fit: fill; */
+}
+
+.category-product-banners img{
+    object-fit: fill; 
+    height: inherit;
+    width: 100%; 
+    box-shadow: 4px 4px 8px rgba(0,0,0,0.4);
 }
 
 .swiper {
@@ -112,5 +126,10 @@
 
         .card-buttons a{
             font-size: 0rem;
+        }
+
+        .category-product-banners img{
+            height: 15rem;
+            object-fit: fill;
         }
   }

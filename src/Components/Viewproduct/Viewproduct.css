@@ -17,7 +17,6 @@
 
 .carousel-item img{
     height: 25rem;
-    
 }
 
 .product-content-area{
@@ -92,4 +91,73 @@
 
 .trusted-line p{
     margin-left: 1.5rem;
+}
+
+
+
+@media all and (max-width: 420px){
+    .product-area{
+        display: block;
+    }
+
+    .carousel {
+        width: 100%;
+    }
+    
+    .carousel-item img{
+        height: 18rem;
+    }
+
+    .product-content-area{
+        width: 100%;
+        padding: 0;
+    }
+
+    .product-content-area h4{
+        margin-top: 2rem;
+        font-size: 1.5rem;
+    }
+    
+    .product-content-area h3{
+        font-size: 1.3rem;
+    }
+    
+    .free-delivery{
+        padding: 0.4rem;
+        font-size: 0.6rem;
+    }
+    
+    .product-desc{
+        width: 100%;
+        font-size: 0.9rem;
+    }
+
+    .three-features-onproduct{
+        gap: 1rem;
+        padding: 1rem 0;
+    }
+    
+    .three-features-onproduct div{
+        gap: 1rem;
+        font-size: 1.2rem;
+    }
+    
+    .three-features-onproduct div p{
+        width: 70%;
+        font-size: 0.7rem;
+    }
+    
+    .trusted-line img{
+        height: 1rem;
+    }
+    
+    .trusted-line h6{
+        margin-bottom: 2.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .trusted-line p{
+        margin-left: 1.2rem;
+        font-size: 0.8rem;
+    }    
 }

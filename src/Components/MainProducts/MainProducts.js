@@ -3,6 +3,15 @@ import './MainProducts.css';
 import Hero from '../../Components/Hero/Hero';
 import Navbar from '../../Components/Navbar/Navbar';
 import Footer from "../Footer/Footer";
+import banner1 from '../../Images/mens-banner1.png';
+import banner3 from '../../Images/mens-banner2.png';
+import womenBanner1 from '../../Images/womens-banner1.png';
+import womenBanner2 from '../../Images/womens-banner2.png';
+import shoesBanner1 from '../../Images/shoes-banner1.png';
+import shoesBanner2 from '../../Images/shoes-banner2.png';
+import watchesBanner1 from '../../Images/watches-banner1.png';
+import maBanner1 from '../../Images/ma-banner1.png';
+import maBanner2 from '../../Images/ma-banner2.png';
 
 import { useRef } from "react";
 // Import Swiper React components
@@ -14,7 +23,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 // import required modules
-import { Pagination, Navigation } from "swiper";
+import { Pagination, Navigation, Autoplay } from "swiper";
 
 
 export default function MainProducts() {
@@ -40,19 +49,19 @@ export default function MainProducts() {
     }, [])
 
     const clothingProducts = newArrivals.filter((item) => {
-        return item.category == "clothing";
+        return item.category === "clothing";
     })
 
     const footwearProducts = newArrivals.filter((item) => {
-        return item.category == "footwear";
+        return item.category === "footwear";
     })
 
     const allWatches = newArrivals.filter((item) => {
-        return item.category == "watches";
+        return item.category === "watches";
     })
 
     const mobileAcc = newArrivals.filter((item) => {
-        return item.category == "mobile accessories";
+        return item.category === "mobile-accessories";
     })
 
     const mensClothing = clothingProducts.filter((item) => {
@@ -68,11 +77,11 @@ export default function MainProducts() {
     })
     
     const menShoes = footwearProducts.filter((item) => {
-        return item.gender == "male";
+        return item.gender === "male";
     })
 
     const womenShoes = footwearProducts.filter((item) => {
-        return item.gender == "female";
+        return item.gender === "female";
     })
 
 
@@ -80,11 +89,29 @@ export default function MainProducts() {
         <div>
             <Navbar />
             <Hero />
-
+            <hr />
+            
             <div className="men-products product-div">
                 <div className="product-div-heading">
                     <h2>Men's Clothing</h2>
                     <a href="/allproducts/clothing/male/all">Explore more</a>
+                </div>
+                <div className="category-product-banners">
+                    <Swiper
+                        spaceBetween={15}
+                        autoplay={{
+                            delay: 2000,
+                            disableOnInteraction: false,
+                        }}
+                        pagination={{
+                        clickable: true,
+                        }}
+                        modules={[Autoplay, Pagination, Navigation]}
+                        className="mySwiper"
+                    >
+                        <SwiperSlide><img src={banner1} alt="" /></SwiperSlide>
+                        <SwiperSlide><img src={banner3} alt="" /></SwiperSlide>
+                    </Swiper>
                 </div>
                 <div className="display-products">
                 <Swiper
@@ -109,7 +136,7 @@ export default function MainProducts() {
                                             <h6>{item.name}</h6>
                                             <p>₹    {item.sellingprice}</p>
                                             <div className="card-buttons">
-                                                <a href={`/product/${item._id}`}><i class="fa-solid fa-eye"></i>View Product</a>
+                                                <a href={`/product/${item.id}`}><i class="fa-solid fa-eye"></i>View Product</a>
                                             </div>
                                         </div>
                                     </SwiperSlide>
@@ -124,6 +151,23 @@ export default function MainProducts() {
                 <div className="product-div-heading">
                     <h2>Women's Clothing</h2>
                     <a href="/allproducts/clothing/female/all">Explore more</a>
+                </div>
+                <div className="category-product-banners">
+                    <Swiper
+                        spaceBetween={15}
+                        autoplay={{
+                            delay: 2000,
+                            disableOnInteraction: false,
+                        }}
+                        pagination={{
+                        clickable: true,
+                        }}
+                        modules={[Autoplay, Pagination, Navigation]}
+                        className="mySwiper"
+                    >
+                        <SwiperSlide><img src={womenBanner1} alt="" /></SwiperSlide>
+                        <SwiperSlide><img src={womenBanner2} alt="" /></SwiperSlide>
+                    </Swiper>
                 </div>
                 <div className="display-products">
                 <Swiper
@@ -148,7 +192,7 @@ export default function MainProducts() {
                                             <h6>{item.name}</h6>
                                             <p>₹ {item.sellingprice}</p>
                                             <div className="card-buttons">
-                                                <a href={`/product/${item._id}`}><i class="fa-solid fa-eye"></i>View Product</a>
+                                                <a href={`/product/${item.id}`}><i class="fa-solid fa-eye"></i>View Product</a>
                                             </div>
                                         </div>
                                     </SwiperSlide>
@@ -162,6 +206,25 @@ export default function MainProducts() {
                 <div className="product-div-heading">
                     <h2>Footwear</h2>
                     <a href="/allproducts/footwear/both/all">Explore more</a>
+                </div>
+                <div className="category-product-banners">
+                <Swiper
+                    spaceBetween={30}
+                    centeredSlides={true}
+                    autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                    }}
+                    pagination={{
+                    clickable: true,
+                    }}
+                    navigation={true}
+                    modules={[Autoplay, Pagination, Navigation]}
+                    className="mySwiper"
+                >
+                    <SwiperSlide><img src={shoesBanner1} alt="" /></SwiperSlide>
+                    <SwiperSlide><img src={shoesBanner2} alt="" /></SwiperSlide>
+                </Swiper>
                 </div>
                 <div className="display-products">
                     <Swiper
@@ -186,7 +249,7 @@ export default function MainProducts() {
                                                 <h6>{item.name}</h6>
                                                 <p>₹ {item.sellingprice}</p>
                                                 <div className="card-buttons">
-                                                    <a href={`/product/${item._id}`}><i class="fa-solid fa-eye"></i>View Product</a>
+                                                    <a href={`/product/${item.id}`}><i class="fa-solid fa-eye"></i>View Product</a>
                                                 </div>
                                             </div>
                                         </SwiperSlide>
@@ -200,6 +263,23 @@ export default function MainProducts() {
                 <div className="product-div-heading">
                     <h2>Watches</h2>
                     <a href="/allproducts/watches/both/all">Explore more</a>
+                </div>
+                <div className="category-product-banners">
+                    <Swiper
+                        spaceBetween={15}
+                        autoplay={{
+                            delay: 2000,
+                            disableOnInteraction: false,
+                        }}
+                        pagination={{
+                        clickable: true,
+                        }}
+                        modules={[Autoplay, Pagination, Navigation]}
+                        className="mySwiper"
+                    >
+                        <SwiperSlide><img src={watchesBanner1} alt="" /></SwiperSlide>
+                        {/* <SwiperSlide><img src={banner3} alt="" /></SwiperSlide> */}
+                    </Swiper>
                 </div>
                 <div className="display-products">
                 <Swiper
@@ -224,7 +304,7 @@ export default function MainProducts() {
                                             <h6>{item.name}</h6>
                                             <p>₹ {item.sellingprice}</p>
                                             <div className="card-buttons">
-                                                <a href={`/product/${item._id}`}><i class="fa-solid fa-eye"></i>View Product</a>
+                                                <a href={`/product/${item.id}`}><i class="fa-solid fa-eye"></i>View Product</a>
                                             </div>
                                         </div>
                                     </SwiperSlide>
@@ -237,7 +317,24 @@ export default function MainProducts() {
             <div className="men-products product-div">
                 <div className="product-div-heading">
                     <h2>Mobile Accessories</h2>
-                    <a href="/allproducts/watches/both/all">Explore more</a>
+                    <a href="/allproducts/mobile-accessories/both/all">Explore more</a>
+                </div>
+                <div className="category-product-banners">
+                    <Swiper
+                        spaceBetween={15}
+                        autoplay={{
+                            delay: 2000,
+                            disableOnInteraction: false,
+                        }}
+                        pagination={{
+                        clickable: true,
+                        }}
+                        modules={[Autoplay, Pagination, Navigation]}
+                        className="mySwiper"
+                    >
+                        <SwiperSlide><img src={maBanner1} alt="" /></SwiperSlide>
+                        <SwiperSlide><img src={maBanner2} alt="" /></SwiperSlide>
+                    </Swiper>
                 </div>
                 <div className="display-products">
                 <Swiper
@@ -262,7 +359,7 @@ export default function MainProducts() {
                                             <h6>{item.name}</h6>
                                             <p>₹ {item.sellingprice}</p>
                                             <div className="card-buttons">
-                                                <a href={`/product/${item._id}`}><i class="fa-solid fa-eye"></i>View Product</a>
+                                                <a href={`/product/${item.id}`}><i class="fa-solid fa-eye"></i>View Product</a>
                                             </div>
                                         </div>
                                     </SwiperSlide>

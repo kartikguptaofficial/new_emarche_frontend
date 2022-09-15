@@ -1,121 +1,63 @@
 {
     "data": [
         {
-            "id": 1,
-            "name": "UNISEX SNEAKERS COPY AIR JORDAN",
-            "costprice": 484,
-            "sellingprice": 649,
-            "gender": "unisex",
-            "category": "footwear",
-            "img1": "https://images.meesho.com/images/products/114739658/5tfbr_512.webp"
-        },
-        {
-            "id": 2,
-            "name": "Trendy Graceful Men Tshirt",
-            "costprice": 227,
-            "sellingprice": 349,
+            "id": "6322f1cbd15b01fe1cebd762",
+            "name": "Men stylish denim jeans",
+            "sellingprice": 769,
             "gender": "male",
             "category": "clothing",
-            "img1": "https://images.meesho.com/images/products/74320697/0ngcg_512.webp"
+            "img1": "https://images.meesho.com/images/products/123127672/ofnng_512.webp"
         },
         {
-            "id": 3,
-            "name": "Trendy Latest Men Tshirts",
-            "costprice": 191,
-            "sellingprice": 299,
-            "gender": "male",
-            "category": "clothing",
-            "img1": "https://images.meesho.com/images/products/50389616/fvga8_512.webp"
-        },
-        {
-            "id": 3,
-            "name": "Trendy Latest Men Tshirts",
-            "costprice": 191,
-            "sellingprice": 299,
-            "gender": "male",
-            "category": "clothing",
-            "img1": "https://images.meesho.com/images/products/50389616/fvga8_512.webp"
-        },
-        {
-            "id": 3,
-            "name": "Trendy Latest Men Tshirts",
-            "costprice": 191,
-            "sellingprice": 299,
-            "gender": "male",
-            "category": "clothing",
-            "img1": "https://images.meesho.com/images/products/50389616/fvga8_512.webp"
-        },
-        {
-            "id": 3,
-            "name": "Trendy Latest Men Tshirts",
-            "costprice": 191,
-            "sellingprice": 299,
-            "gender": "male",
-            "category": "clothing",
-            "img1": "https://images.meesho.com/images/products/50389616/fvga8_512.webp"
-        },
-        {
-            "id": 3,
-            "name": "Trendy Latest Men Tshirts",
-            "costprice": 191,
-            "sellingprice": 299,
-            "gender": "male",
-            "category": "clothing",
-            "img1": "https://images.meesho.com/images/products/50389616/fvga8_512.webp"
-        },
-        {
-            "id": 3,
-            "name": "Trendy Latest Men Tshirts",
-            "costprice": 191,
-            "sellingprice": 299,
-            "gender": "male",
-            "category": "clothing",
-            "img1": "https://images.meesho.com/images/products/50389616/fvga8_512.webp"
-        },
-        {
-            "id": 3,
-            "name": "Trendy Latest Men Tshirts",
-            "costprice": 191,
-            "sellingprice": 299,
-            "gender": "male",
-            "category": "clothing",
-            "img1": "https://images.meesho.com/images/products/50389616/fvga8_512.webp"
-        },
-        {
-            "id": 3,
-            "name": "Men Black Sports Shoes - Sneakers",
-            "costprice": 455,
-            "sellingprice": 549,
-            "gender": "male",
-            "category": "footwear",
-            "img1": "https://images.meesho.com/images/products/76169445/ipekd_512.webp"
-        },
-        {
-            "id": 5,
-            "name": "Sports Digital watch black",
-            "costprice": 121,
-            "sellingprice": 199,
-            "gender": "unisex",
-            "category": "watches",
-            "img1": "https://images.meesho.com/images/products/146073088/stuho_512.webp"
-        },
-        {
-            "id": 6,
-            "name": "Full Sleeves Crop Top",
-            "costprice": 201,
+            "id": "63218d1fffdfe7cdc78ca3a7",
+            "name": "Casual Blend Neck Puff Sleeves ",
             "sellingprice": 299,
             "gender": "female",
             "category": "clothing",
-            "img1": "https://images.meesho.com/images/products/76475323/tfqbd_512.webp"
+            "img1": "https://images.meesho.com/images/products/159280385/uylqf_512.webp"
         },
         {
-            "id": 7,
-            "name": "Mobile Holders",
-            "costprice": 228,
+            "id": "6322f2ccd15b01fe1cebd778",
+            "name": "Black Denim Jeans/Joggers/Palazzo/Trousers",
+            "sellingprice": 369,
+            "gender": "female",
+            "category": "clothing",
+            "img1": "https://images.meesho.com/images/products/164831096/myj1r_512.webp"
+        },
+        {
+            "id": "6322f3a5d15b01fe1cebd77a",
+            "name": "Graceful Women Dresses",
+            "sellingprice": 249,
+            "gender": "female",
+            "category": "clothing",
+            "img1": "https://images.meesho.com/images/products/159225362/qzo61_512.webp"
+        },
+
+        {
+            "id": "63230372d15b01fe1cebd878",
+            "name": "Green Solid Track & Field Shoes",
+            "sellingprice": 549,
+            "gender": "male",
+            "category": "footwear",
+            "img1": "https://images.meesho.com/images/products/91503993/luct4_512.webp"
+        },
+
+        {
+            "id": "6322dd87c1f75a303f978c0a",
+            "name": "Black Rubber Digital Watch",
+            "sellingprice": 169,
+            "gender": "both",
+            "category": "watches",
+            "img1": "https://images.meesho.com/images/products/45496537/0az09_512.webp"
+        },
+
+        {
+            "id": "6322fbaad15b01fe1cebd81e",
+            "name": "Wall Mounted Storage Case",
             "sellingprice": 299,
-            "gender": "unisex",
-            "category": "mobile accessories",
-            "img1": "https://images.meesho.com/images/products/32037400/1shvl_512.webp"
+            "gender": "both",
+            "category": "mobile-accessories",
+            "img1": "https://images.meesho.com/images/products/30818911/lgavt_512.webp"
         }
     ]
 }

@@ -46,10 +46,53 @@ export default function Viewproduct() {
                         {
                             filterProducts.map((item) => {
                                 return (
-                                    <div className="carousel-item active" data-bs-interval="10000">
-                                        <img src={item.img1} className="d-block w-100" alt="..." />
-                                    </div>
-
+                                    <>
+                                        <div className="carousel-item active" data-bs-interval="5000">
+                                            <img src={item.img1} className="d-block w-100" alt="..." />
+                                        </div>
+                                        {
+                                            item.img2 === "" ? '' :
+                                            <div className="carousel-item active" data-bs-interval="5000">
+                                                <img src={item.img2} className="d-block w-100" alt="..." />
+                                            </div>
+                                        }
+                                        {
+                                            item.img3 === "" ? '' :
+                                            <div className="carousel-item active" data-bs-interval="5000">
+                                                <img src={item.img3} className="d-block w-100" alt="..." />
+                                            </div>
+                                        }
+                                        {
+                                            item.img4 === "" ? '' :
+                                            <div className="carousel-item active" data-bs-interval="5000">
+                                                <img src={item.img4} className="d-block w-100" alt="..." />
+                                            </div>
+                                        }
+                                        {
+                                            item.img5 === "" ? '' :
+                                            <div className="carousel-item active" data-bs-interval="5000">
+                                                <img src={item.img5} className="d-block w-100" alt="..." />
+                                            </div>
+                                        }
+                                        {
+                                            item.img6 === "" ? '' :
+                                            <div className="carousel-item active" data-bs-interval="5000">
+                                                <img src={item.img6} className="d-block w-100" alt="..." />
+                                            </div>
+                                        }
+                                        {
+                                            item.img7 === "" ? '' :
+                                            <div className="carousel-item active" data-bs-interval="5000">
+                                                <img src={item.img7} className="d-block w-100" alt="..." />
+                                            </div>
+                                        }
+                                        {
+                                            item.img8 === "" ? '' :
+                                            <div className="carousel-item active" data-bs-interval="5000">
+                                                <img src={item.img8} className="d-block w-100" alt="..." />
+                                            </div>
+                                        }
+                                    </>
                                 )
                             })
                         }

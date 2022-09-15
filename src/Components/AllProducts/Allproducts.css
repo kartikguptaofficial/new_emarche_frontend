@@ -17,6 +17,10 @@
     padding: 1rem;
 }
 
+.sidebar a{
+    text-decoration: none;
+}
+
 .filter-list{
     list-style: none;
     margin: 2rem 0;
@@ -69,6 +73,13 @@
     color: red;
 }
 
+.filter-btn-resp{
+    display: none;
+    padding: 0.7rem 2rem;
+    text-align: center;
+    width: 100%;
+}
+
 @media all and (max-width: 420px){
     .sidebar{
         display: none;
@@ -112,5 +123,9 @@
     .card-buttons a{
         font-size: 0.7rem;
         margin-top: -0.5rem;
+    }
+
+    .filter-btn-resp{
+        display: block;
     }
 }

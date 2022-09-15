@@ -18,6 +18,11 @@ export default function Admin() {
     const [img2, setImg2] = useState("");
     const [img3, setImg3] = useState("");
     const [img4, setImg4] = useState("");
+    const [img5, setImg5] = useState("");
+    const [img6, setImg6] = useState("");
+    const [img7, setImg7] = useState("");
+    const [img8, setImg8] = useState("");
+    const [linkToProduct, setLinkToProduct] = useState("");
 
     const show = useParams();
     console.log(show.show);
@@ -32,7 +37,7 @@ export default function Admin() {
             headers: {
                 'Content-Type': "application/json"
             },
-            body: JSON.stringify({ name, description, costprice, sellingprice, category, gender, img1, img2, img3, img4 })
+            body: JSON.stringify({ name, description, costprice, sellingprice, category, gender, img1, img2, img3, img4,  img5, img6, img7, img8, linkToProduct })
         })
         if (send) {
             window.alert("Product is added successfully")
@@ -68,34 +73,53 @@ export default function Admin() {
                                 <h3>Add Product</h3>
                                 <form action="/admin" method='POST' onSubmit={sendData}>
                                     <label htmlFor="name">Name</label>
-                                    <input type="text" name='name' id='name' value={name} onChange={(e) => setName(e.target.value)} />
+                                    <input type="text" required name='name' id='name' value={name} onChange={(e) => setName(e.target.value)} />
                                     <label htmlFor="description">Description</label>
-                                    <textarea name="description" id="description" cols="30" rows="2" value={description} onChange={(e) => setDescription(e.target.value)}></textarea>
+                                    <textarea name="description" required id="description" cols="30" rows="2" value={description} onChange={(e) => setDescription(e.target.value)}></textarea>
                                     <label htmlFor="costprice">Cost Price</label>
-                                    <input type="number" name='costprice' id='costprice' value={costprice} onChange={(e) => setcostPrice(e.target.value)} />
+                                    <input type="number" required name='costprice' id='costprice' value={costprice} onChange={(e) => setcostPrice(e.target.value)} />
                                     <label htmlFor="sellingprice">Selling Price</label>
-                                    <input type="number" name='sellingprice' id='sellingprice' value={sellingprice} onChange={(e) => setSellingPrice(e.target.value)} />
+                                    <input type="number" required name='sellingprice' id='sellingprice' value={sellingprice} onChange={(e) => setSellingPrice(e.target.value)} />
                                     <label htmlFor="category">Category</label>
-                                    <select name="category" id="category" value={category} onChange={(e) => setCategory(e.target.value)}>
+                                    <select name="category" required id="category" value={category} onChange={(e) => setCategory(e.target.value)}>
                                         <option value="">-Select-</option>
                                         <option value="clothing">Clothing</option>
                                         <option value="footwear">Footwear</option>
                                         <option value="watches">Watches</option>
+                                        <option value="jewellery">Jewellery</option>
+                                        <option value="apparel-accessories">Apparel Accessories</option>
+                                        <option value="mobile-accessories">Mobile Accessories</option>
                                     </select>
-                                    <label htmlFor="gender">Gender</label>
-                                    <select name="gender" id="gender" value={gender} onChange={(e) => setGender(e.target.value)}>
-                                        <option value="">-Select-</option>
-                                        <option value="male">Male</option>
-                                        <option value="female">Female</option>
-                                    </select>
+                                    {
+                                        category === "clothing" || category === "footwear" || category === "apparel-accessories" ?
+                                        <>
+                                            <label htmlFor="gender">Gender</label>
+                                            <select name="gender" required id="gender" value={gender} onChange={(e) => setGender(e.target.value)}>
+                                                <option value="">-Select-</option>
+                                                <option value="male">Male</option>
+                                                <option value="female">Female</option>
+                                                <option value="unisex">Unisex</option>
+                                            </select>   
+                                        </> : ''
+                                    }
                                     <label htmlFor="img1">Image 1 URL</label>
-                                    <input type="text" name='img1' id='img1' value={img1} onChange={(e) => setImg1(e.target.value)} />
+                                    <input type="text" name='img1' id='img1' required value={img1} onChange={(e) => setImg1(e.target.value)} />
                                     <label htmlFor="img2">Image 2 URL</label>
                                     <input type="text" name='img2' id='img2' value={img2} onChange={(e) => setImg2(e.target.value)} />
                                     <label htmlFor="img3">Image 3 URL</label>
                                     <input type="text" name='img3' id='img3' value={img3} onChange={(e) => setImg3(e.target.value)} />
                                     <label htmlFor="img4">Image 4 URL</label>
                                     <input type="text" name='img4' id='img4' value={img4} onChange={(e) => setImg4(e.target.value)} />
+                                    <label htmlFor="img5">Image 5 URL</label>
+                                    <input type="text" name='img5' id='img5' value={img5} onChange={(e) => setImg5(e.target.value)} />
+                                    <label htmlFor="img6">Image 6 URL</label>
+                                    <input type="text" name='img6' id='img6' value={img6} onChange={(e) => setImg6(e.target.value)} />
+                                    <label htmlFor="img7">Image 7 URL</label>
+                                    <input type="text" name='img7' id='img7' value={img7} onChange={(e) => setImg7(e.target.value)} />
+                                    <label htmlFor="img8">Image 8 URL</label>
+                                    <input type="text" name='img8' id='img8' value={img8} onChange={(e) => setImg8(e.target.value)} />
+                                    <label htmlFor="linkToProduct">Link to Product</label>
+                                    <input type="text" required name='linkToProduct' id='linkToProduct' value={linkToProduct} onChange={(e) => setLinkToProduct(e.target.value)} />
                                     <button type="submit" className='btn btn-danger'>Add Product</button>
                                 </form>
                             </div> :
