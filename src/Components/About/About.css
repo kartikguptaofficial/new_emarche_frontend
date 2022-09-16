@@ -43,3 +43,44 @@
     box-shadow: 4px 4px 8px rgba(0,0,0,0.6);
     background-color: rgb(250,250,250);
 }
+
+
+@media all and (max-width: 420px){
+    .about-brand{
+        width: 95%;
+        margin: 2rem auto;
+        gap: 0.8rem;
+    }
+    
+    .about-brand img{
+        height: 5rem;
+    }
+
+    .about-company-content h2{
+        font-size: 1.2rem;
+    }
+
+    .about-company-content p{
+        font-size: 0.8rem;
+    }
+
+    .about-founders{
+        width: 80%;
+    }
+
+    .about-founders h3{
+        font-size: 2rem;
+    }
+
+    .founders{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.7rem;
+        margin: 2rem 0;
+    }
+
+    .founders h6{
+        font-size: 0.9rem;
+        padding: 0.8rem 2.5rem;
+    }
+}

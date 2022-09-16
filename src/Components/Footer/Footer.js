@@ -17,15 +17,18 @@ const Footer = () => {
                 </div>
                 <div className="brand-details">
                     <p>We have something you can't refuse!</p>
-                    <p>company@gmail.com</p>
+                    <p>emarcheofficial@gmail.com</p>
                 </div>
             </div>
             <div>
                 <h2>Shopping & Categories</h2>
                 <ul>
-                    <li><a href="">Men's Shopping</a></li>
-                    <li><a href="">Women's Shopping</a></li>
-                    <li><a href="">Kid's Shopping</a></li>
+                    <li><a href="/allproducts/clothing/both/all">Apparel</a></li>
+                    <li><a href="/allproducts/footwear/both/all">Footwear</a></li>
+                    <li><a href="/allproducts/watches/both/all">Watches</a></li>
+                    <li><a href="/allproducts/jewellery/both/all">Jewellery</a></li>
+                    <li><a href="/allproducts/apparel-accessories/both/all">Apparel Accessories</a></li>
+                    <li><a href="/allproducts/mobile-accessories/both/all">Mobile Accessories</a></li>
                 </ul>
             </div>
             <div>
@@ -41,19 +44,19 @@ const Footer = () => {
                 <h2>Useful Links</h2>
                 <ul>
                     <li><a href="http://www.instagram.com/emarche_official" target="_blank">Instagram</a></li>
-                    <li><a href="">Facebook</a></li>
-                    <li><a href="/about">Gmail</a></li>
+                    <li><a href="/">Facebook</a></li>
+                    <li><a href="/contact">Gmail</a></li>
                 </ul>
             </div>
         </section>
         <hr />
         <section className="lower-footer">
-            <p>Copyright (c) E Marche 2022 | All rights reserved</p>
+            <p>Copyright &copy; E Marche 2022 | All rights reserved</p>
             <p>Created By: Kartik Gupta & Team</p>
             <div className="social-icons">
-                <a href=""><i class="fa-brands fa-instagram"></i></a>
-                <a href=""><i class="fa-brands fa-facebook-f"></i></a>
-                <a href=""><i class="fa-solid fa-envelope"></i></a>
+                <a href="http://www.instagram.com/emarche_official"><i class="fa-brands fa-instagram"></i></a>
+                <a href="/"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="/contact"><i class="fa-solid fa-envelope"></i></a>
             </div>
         </section>
 

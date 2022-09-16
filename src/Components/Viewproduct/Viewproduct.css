@@ -11,12 +11,18 @@
     gap: 1rem;
 }
 
-.carousel {
+.image-area{
+    position: relative;
     width: 45%;
+    height: 25rem;
 }
 
-.carousel-item img{
-    height: 25rem;
+.image-area img{
+    position: absolute;
+    bottom: -2rem;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 5px;
 }
 
 .product-content-area{
@@ -93,19 +99,37 @@
     margin-left: 1.5rem;
 }
 
+.modal-dialog{
+    height: 34rem;
+    width: 100%;
+}
 
+.modal-body a{
+    text-decoration: none;
+    box-shadow: 4px 4px 8px rgba(0,0,0,0.4);
+    text-align: center;
+    margin-top: 1rem;
+    padding: 0.5rem;
+}
+
+.modal-body a img{
+    height: 2.5rem;
+    width: 3rem;
+    margin-right: 1rem;
+}
 
 @media all and (max-width: 420px){
     .product-area{
         display: block;
     }
 
-    .carousel {
+    .image-area {
         width: 100%;
     }
     
-    .carousel-item img{
-        height: 18rem;
+    .image-area img{
+        height: 100%;
+        bottom: -4rem;
     }
 
     .product-content-area{
@@ -159,5 +183,27 @@
     .trusted-line p{
         margin-left: 1.2rem;
         font-size: 0.8rem;
-    }    
+    }
+    
+    .modal-title{
+        font-size: 1rem;
+    }
+
+    .modal-body p{
+        font-size: 0.8rem;
+    }
+
+    .modal-body ul li{
+        font-size: 0.7rem;
+        margin-left: -1rem;
+    }
+
+    .modal-body a img{
+        height: 1.5rem;
+        width: 2rem;
+    }
+
+    .modal-body a{
+        font-size: 0.8rem;
+    }
 }

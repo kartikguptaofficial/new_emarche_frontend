@@ -21,11 +21,11 @@ export default function Allproducts() {
         })
         const data = await res.json();
         if (data) {
-              console.log(data)
+            console.log(data)
             setProducts(data)
         }
     }
-
+    // products.sort();
 
     useEffect(() => {
         getProducts();
@@ -63,11 +63,11 @@ export default function Allproducts() {
 
                         <ul className='price-filter filter-list'>
                             <h6>Categories</h6>
-                            <li><a href={`/allproducts/clothing/${category.gender}/all`}>Clothing</a></li>
-                            <li><a href={`/allproducts/footwear/${category.gender}/all`}>Footwear</a></li>
+                            <li><a href={`/allproducts/clothing/both/all`}>Clothing</a></li>
+                            <li><a href={`/allproducts/footwear/both/all`}>Footwear</a></li>
                             <li><a href={`/allproducts/watches/both/all`}>Watches</a></li>
-                            <li><a href={`/allproducts/jewellery/${category.gender}/all`}>Jewellery</a></li>
-                            <li><a href={`/allproducts/apparel-accessories/${category.gender}/all`}>Apparel Accessories</a></li>
+                            <li><a href={`/allproducts/jewellery/both/all`}>Jewellery</a></li>
+                            <li><a href={`/allproducts/apparel-accessories/both/all`}>Apparel Accessories</a></li>
                             <li><a href={`/allproducts/electronics-accessories/both/all`}>Electronic Accessories</a></li>
                         </ul>
 
@@ -115,11 +115,11 @@ export default function Allproducts() {
                                     <img src={item.img1} alt="" />
                                     <div className="card-content">
                                         <h5>{item.name}</h5>
-                                        <h6><span>₹ {item.sellingprice}</span> <s>₹ {item.sellingprice}</s></h6>
+                                        <h6><span>₹ {item.sellingprice}</span> <s>₹ {item.mrp}</s></h6>
                                         <hr />
                                         <div className="card-buttons">
                                             <a href={`/product/${item._id}`}><i class="fa-solid fa-eye"></i>View Product</a>
-                                            <a href=""><i class="fa-solid fa-bag-shopping"></i>Buy now</a>
+                                            {/* <a href=""><i class="fa-solid fa-bag-shopping"></i>Buy now</a> */}
                                         </div>
                                     </div>
                                 </div>

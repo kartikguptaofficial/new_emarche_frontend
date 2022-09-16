@@ -12,6 +12,7 @@ export default function Admin() {
     const [description, setDescription] = useState("");
     const [costprice, setcostPrice] = useState("");
     const [sellingprice, setSellingPrice] = useState("");
+    const [mrp, setMrp] = useState("");
     const [category, setCategory] = useState("");
     const [gender, setGender] = useState("");
     const [img1, setImg1] = useState("");
@@ -37,7 +38,7 @@ export default function Admin() {
             headers: {
                 'Content-Type': "application/json"
             },
-            body: JSON.stringify({ name, description, costprice, sellingprice, category, gender, img1, img2, img3, img4,  img5, img6, img7, img8, linkToProduct })
+            body: JSON.stringify({ name, description, costprice, sellingprice, mrp, category, gender, img1, img2, img3, img4,  img5, img6, img7, img8, linkToProduct })
         })
         if (send) {
             window.alert("Product is added successfully")
@@ -80,6 +81,8 @@ export default function Admin() {
                                     <input type="number" required name='costprice' id='costprice' value={costprice} onChange={(e) => setcostPrice(e.target.value)} />
                                     <label htmlFor="sellingprice">Selling Price</label>
                                     <input type="number" required name='sellingprice' id='sellingprice' value={sellingprice} onChange={(e) => setSellingPrice(e.target.value)} />
+                                    <label htmlFor="mrp">MRP</label>
+                                    <input type="number" required name='mrp' id='mrp' value={mrp} onChange={(e) => setMrp(e.target.value)} />
                                     <label htmlFor="category">Category</label>
                                     <select name="category" required id="category" value={category} onChange={(e) => setCategory(e.target.value)}>
                                         <option value="">-Select-</option>

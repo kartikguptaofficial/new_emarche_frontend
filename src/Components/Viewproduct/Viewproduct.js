@@ -4,11 +4,27 @@ import './Viewproduct.css';
 import logo from '../../Images/mainlogo.png';
 import Footer from '../Footer/Footer'
 import Navbar from '../Navbar/Navbar'
+import instaLogo from '../../Images/instagram.png'
+import facebookLogo from '../../Images/facebook.png'
+import gmailLogo from '../../Images/gmail.png'
+
+import { useRef } from "react";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+// import required modules
+import { Pagination, Navigation, Autoplay } from "swiper";
+
 
 export default function Viewproduct() {
 
     const id = useParams();
-    console.log(id.id);
+    // console.log(id.id);
 
     const [products, setProducts] = useState([]);
 
@@ -29,7 +45,7 @@ export default function Viewproduct() {
             return item._id === id.id;
         })
     }
-    console.log(filterProducts)
+    
 
     useEffect(() => {
         getProducts();
@@ -41,80 +57,70 @@ export default function Viewproduct() {
 
             <div className="product-area">
 
-                <div id="carouselExampleInterval" className="carousel slide" data-bs-ride="carousel">
-                    <div className="carousel-inner">
+                <div className="image-area">
+                    <Swiper
+                        spaceBetween={15}
+                        autoplay={{
+                            delay: 2000,
+                            disableOnInteraction: false,
+                        }}
+                        pagination={{
+                        clickable: true,
+                        }}
+                        modules={[Autoplay, Pagination, Navigation]}
+                        className="mySwiper"
+                    >
                         {
                             filterProducts.map((item) => {
-                                return (
+                                return(
                                     <>
-                                        <div className="carousel-item active" data-bs-interval="5000">
-                                            <img src={item.img1} className="d-block w-100" alt="..." />
-                                        </div>
-                                        {
-                                            item.img2 === "" ? '' :
-                                            <div className="carousel-item active" data-bs-interval="5000">
-                                                <img src={item.img2} className="d-block w-100" alt="..." />
-                                            </div>
-                                        }
-                                        {
-                                            item.img3 === "" ? '' :
-                                            <div className="carousel-item active" data-bs-interval="5000">
-                                                <img src={item.img3} className="d-block w-100" alt="..." />
-                                            </div>
-                                        }
-                                        {
-                                            item.img4 === "" ? '' :
-                                            <div className="carousel-item active" data-bs-interval="5000">
-                                                <img src={item.img4} className="d-block w-100" alt="..." />
-                                            </div>
-                                        }
-                                        {
-                                            item.img5 === "" ? '' :
-                                            <div className="carousel-item active" data-bs-interval="5000">
-                                                <img src={item.img5} className="d-block w-100" alt="..." />
-                                            </div>
-                                        }
-                                        {
-                                            item.img6 === "" ? '' :
-                                            <div className="carousel-item active" data-bs-interval="5000">
-                                                <img src={item.img6} className="d-block w-100" alt="..." />
-                                            </div>
-                                        }
-                                        {
-                                            item.img7 === "" ? '' :
-                                            <div className="carousel-item active" data-bs-interval="5000">
-                                                <img src={item.img7} className="d-block w-100" alt="..." />
-                                            </div>
-                                        }
-                                        {
-                                            item.img8 === "" ? '' :
-                                            <div className="carousel-item active" data-bs-interval="5000">
-                                                <img src={item.img8} className="d-block w-100" alt="..." />
-                                            </div>
-                                        }
+                                    <SwiperSlide><img src={item.img1} alt="" /></SwiperSlide>
+                                    {
+                                        item.img2 === "" ? '' :
+                                        <SwiperSlide><img src={item.img2} alt="" /></SwiperSlide>
+                                    }
+                                    {
+                                        item.img3 === "" ? '' :
+                                        <SwiperSlide><img src={item.img3} alt="" /></SwiperSlide>
+                                    }
+                                    {
+                                        item.img4 === "" ? '' :
+                                        <SwiperSlide><img src={item.img4} alt="" /></SwiperSlide>
+                                    }
+                                    {
+                                        item.img5 === "" ? '' :
+                                        <SwiperSlide><img src={item.img5} alt="" /></SwiperSlide>
+                                    }
+                                    {
+                                        item.img6 === "" ? '' :
+                                        <SwiperSlide><img src={item.img6} alt="" /></SwiperSlide>
+                                    }
+                                    {
+                                        item.img7 === "" ? '' :
+                                        <SwiperSlide><img src={item.img7} alt="" /></SwiperSlide>
+                                    }
+                                    {
+                                        item.img8 === "" ? '' :
+                                        <SwiperSlide><img src={item.img8} alt="" /></SwiperSlide>
+                                    }
                                     </>
                                 )
                             })
                         }
-                    </div>
-                    <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-                        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span className="visually-hidden">Previous</span>
-                    </button>
-                    <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-                        <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span className="visually-hidden">Next</span>
-                    </button>
+                    </Swiper>
                 </div>
-
+                
                 <div className="product-content-area">
                     {
                         filterProducts.map((item) => {
                             return (
                                 <>
                                     <h4>{item.name}</h4>
-                                    <p>₹ {item.sellingprice}  <s>₹ {item.sellingprice}</s></p>
+                                    <p>₹ {item.sellingprice}  <s>₹ {item.mrp}</s></p>
                                     <p className='free-delivery'>Free Delivery</p>
+                                    <a type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                        Buy Now
+                                    </a>
                                     <h3>Product Details</h3>
                                     <p className='product-desc'>{item.description}</p>
 
@@ -149,6 +155,34 @@ export default function Viewproduct() {
                             )
                         })
                     }
+                </div>
+
+                {/* <!-- Modal --> */}
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Thanks for making interest in E Marche</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Follow the below Instructions:-</p>
+                        <ul>
+                            <li>Copy this code <span style={{fontWeight: "500"}}>{id.id}</span></li>
+                            <li>Send to any of the below options</li>
+                            <li>Our team will text you for further details</li>
+                        </ul>
+                        {/* <h6>{filterProducts[0]._id}</h6> */}
+                        <a href="https://www.instagram.com/emarche_official"><img src={instaLogo} alt="" />Instagram</a>
+                        <a href=""><img src={facebookLogo} alt="" />Facebook</a>
+                        <a><img src={gmailLogo} alt="" />emarcheofficial@gmail.com</a>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        {/* <button type="button" class="btn btn-primary">Understood</button> */}
+                    </div>
+                    </div>
+                </div>
                 </div>
 
             </div>

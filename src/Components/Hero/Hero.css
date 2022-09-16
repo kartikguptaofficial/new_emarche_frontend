@@ -174,4 +174,15 @@
         height: 20rem;
     }
 
+    .left-img-div-content h2{
+        font-size: 2.2rem;
+    }
+
+    .left-img-div-content p{
+        font-size: 1.1rem;
+    }
+    
+    .right-img-href h6{
+        font-size: 1.5rem;
+    }
 }

@@ -1,12 +1,12 @@
 import React from 'react'
 import './Hero.css';
-import leftImage from '../../Images/left-banner-image.jpg';
-import topleftImg from '../../Images/baner-right-image-01.jpg';
-import toprightImg from '../../Images/baner-right-image-02.jpg';
-import bottomleftImg from '../../Images/baner-right-image-03.jpg';
-import bottomrightImg from '../../Images/baner-right-image-04.jpg';
-import banner1 from '../../Images/banner1.png';
-import banner3 from '../../Images/banner3.png';
+import leftImage from '../../Images/left-banner-image.webp';
+import topleftImg from '../../Images/baner-right-image-01.webp';
+import toprightImg from '../../Images/baner-right-image-02.webp';
+import bottomleftImg from '../../Images/baner-right-image-03.webp';
+import bottomrightImg from '../../Images/baner-right-image-04.webp';
+import banner1 from '../../Images/banner1.webp';
+import banner3 from '../../Images/banner3.webp';
 
 import { useRef } from "react";
 // Import Swiper React components
