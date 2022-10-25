@@ -10,6 +10,7 @@ export default function Cart() {
     const [cart, setCart] = useState([]);
     const [address, setAddress] = useState("");
     const [checkoutPage, setCheckoutPage] = useState(false);
+    const [totalAmtPayable, setTotalAmtPayable] = useState(0);
 
     const paramId = useParams();
     const userId = paramId.id;
@@ -47,7 +48,10 @@ export default function Cart() {
     const placeOrderFunc = async () => {
         const res = await fetch(`https://emarche-backend.herokuapp.com/placeOrder/${userId}`, {
             method: "POST",
-            body: { total: amtPayable , address: address}
+            headers: {
+              'Content-Type': "application/json"
+            },
+            body: JSON.stringify({ totalAmt: amtPayable , address: address})
         });
         const data = await res.json();
         if (data) {
@@ -87,6 +91,8 @@ export default function Cart() {
 
     let amtPayable = 0;
     amtPayable = Math.ceil(cartTotal + taxes);
+    // setTotalAmtPayable(amtPayable)
+
 
     let btnDisabled = true;
     if (cart.length > 0) {
@@ -119,13 +125,13 @@ export default function Cart() {
                             }
                             <hr />
                         </ul>
-                            <h6 className='amount-payable'>Amount Payable : <p className='amt-payable'>₹ {Math.ceil(cartTotal + (cartTotal * 1 / 100))}.00</p></h6>
+                            <h6 className='amount-payable'>Amount Payable : <p className='amt-payable'>₹ {amtPayable}.00</p></h6>
                             <hr />
                             <form action="">
                                 <input type="radio" name="" checked={true} id="cod-payment" />
                                 <label htmlFor="cod-payment">Cash on delivery (COD)</label>
                                 <small>Currently, we are accepting only COD payments</small>
-                                <textarea className='address-input' value={address} onChange={(e) => setAddress(e.target.value)} type="text" placeholder='Enter your full address' />
+                                <input className='address-input' name='address' required value={address} onChange={(e) => setAddress(e.target.value)} type="text" placeholder='Enter your full address'/>
                             </form>
                             <div className="checkout-actions">
                                 <button className="btn btn-danger" onClick={() => setCheckoutPage(false)}>Go Back</button>
