@@ -33,8 +33,8 @@ const [password, setPassword] = useState("");
             toast.warn("This email is already registered. You can login")
           }
           else{
-            toast.success("Account created...");
-            window.location.href = '/';
+            toast.success("Account created... ");
+            window.location.href = '/login';
           }
         }
     }
@@ -56,7 +56,7 @@ const [password, setPassword] = useState("");
                 <input type="password" id='password' name='password' placeholder='Enter your password' required value={password} onChange={(e) => setPassword(e.target.value)}/>
                 <button type='submit' className='btn btn-danger'>Submit</button>
             </form>
-            <a href="/">Already signed in ? Login</a>
+            <a href="/login">Already signed in ? Login</a>
         </div>
 
       <Footer />
