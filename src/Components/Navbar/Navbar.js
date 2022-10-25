@@ -155,34 +155,6 @@ export default function Navbar() {
                     <a href='/login'>LOGIN</a>
                 </li> 
             }
-            
-
-
-          {/* <!-- Modal --> */}
-          <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div className="modal-dialog modal-lg">
-              <img src={loginBg} alt="" />
-              <div className="modal-content">
-                <div className="modal-header">
-                  <h5 className="modal-title" id="exampleModalLabel">Login | E Marché</h5>
-                  <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                    <form action="/login" method='POST' onSubmit={submitHandler}>
-                      <div className="modal-body">
-                          <label htmlFor="email">Email Address</label>
-                          <input type="email" name='email' id='email' value={email} onChange={(e) => setEmail(e.target.value)} placeholder=" Enter your email" />
-                          <label htmlFor="password">Password</label>
-                          <input type="password" name='password' id='password' value={password} onChange={(e) => setPassword(e.target.value)} placeholder=" Enter your password" />
-                      </div>
-                      <div className="modal-footer">
-                        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" className='btn btn-danger'>Login</button>
-                      </div>
-                      <a href='/signup'>New user ? Signup</a>
-                    </form>
-              </div>
-            </div>
-          </div>
 
           </ul>
         </div>
@@ -235,7 +207,7 @@ export default function Navbar() {
                 </li>
                 </>:
                 <li>
-                    <a href='/login' type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">LOGIN</a>
+                    <a href='/login' type="button">LOGIN</a>
                 </li> 
             }
 
