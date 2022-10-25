@@ -8,9 +8,9 @@ import Footer from '../Footer/Footer'
 export default function Allproducts() {
 
     const category = useParams();
-    console.log(category.category);
-    console.log(category.gender);
-    console.log(category.filter);
+    // console.log(category.category);
+    // console.log(category.gender);
+    // console.log(category.filter);
 
     const [products, setProducts] = useState([]);
     // const [showProducts, setShowProducts] = useState("");
@@ -21,7 +21,7 @@ export default function Allproducts() {
         })
         const data = await res.json();
         if (data) {
-            console.log(data)
+            // console.log(data)
             setProducts(data)
         }
     }
@@ -29,6 +29,7 @@ export default function Allproducts() {
 
     useEffect(() => {
         getProducts();
+        document.title = `${category.category} | E Marche`
     }, [])
 
     return (
@@ -37,12 +38,12 @@ export default function Allproducts() {
 
                 <a type="button" className='filter-btn-resp' data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Add Filters</a>
 
-                <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
-                    <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Add Filters</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                <div className="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+                    <div className="offcanvas-header">
+                        <h5 className="offcanvas-title" id="offcanvasScrollingLabel">Add Filters</h5>
+                        <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
-                    <div class="offcanvas-body">
+                    <div className="offcanvas-body">
                     <p>Showing results: {category.category}/{category.gender}</p>
                     <h6>FILTERS</h6>
                         {
@@ -68,7 +69,7 @@ export default function Allproducts() {
                             <li><a href={`/allproducts/watches/both/all`}>Watches</a></li>
                             <li><a href={`/allproducts/jewellery/both/all`}>Jewellery</a></li>
                             <li><a href={`/allproducts/apparel-accessories/both/all`}>Apparel Accessories</a></li>
-                            <li><a href={`/allproducts/electronics-accessories/both/all`}>Electronic Accessories</a></li>
+                            <li><a href={`/allproducts/mobile-accessories/both/all`}>Electronic Accessories</a></li>
                         </ul>
 
                     </div>
@@ -111,15 +112,14 @@ export default function Allproducts() {
                     {
                         products.map((item) => {
                             return (
-                                <div className="product-card">
+                                <div className="product-card" key={item._id}>
                                     <img src={item.img1} alt="" />
                                     <div className="card-content">
                                         <h5>{item.name}</h5>
                                         <h6><span>₹ {item.sellingprice}</span> <s>₹ {item.mrp}</s></h6>
                                         <hr />
                                         <div className="card-buttons">
-                                            <a href={`/product/${item._id}`}><i class="fa-solid fa-eye"></i>View Product</a>
-                                            {/* <a href=""><i class="fa-solid fa-bag-shopping"></i>Buy now</a> */}
+                                            <a href={`/product/${item._id}`}><i className="fa-solid fa-eye"></i>View Product</a>
                                         </div>
                                     </div>
                                 </div>

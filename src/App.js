@@ -8,6 +8,9 @@ import Admin from './Components/Admin/Admin';
 import Contact from './Components/Contact/Contact';
 import About from './Components/About/About';
 import Signup from './Components/Signup/Signup';
+import Cart from './Components/Cart/Cart';
+import Orders from './Components/Orders/Orders';
+import Profile from './Components/Profile/Profile';
 
 const AllProductsData = createContext();
 
@@ -42,6 +45,9 @@ function App() {
             <Route path='/contact' element={<Contact />} />
             <Route path='/about' element={<About />} />
             <Route path='/signup' element={<Signup />} />
+            <Route path='/cart/:id' element={<Cart />} />
+            <Route path='/orders/:id' element={<Orders />} />
+            <Route path='/profile/:id' element={<Profile />} />
 
           </Routes>
         </BrowserRouter>

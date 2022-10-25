@@ -4,9 +4,11 @@ import logo from '../../Images/logo1.png';
 import loginBg from '../../Images/login-bg.jpg';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import cartLogo from '../../Images/cart.png';
 
 export default function Navbar() {
 
+  const [userID, setUserID] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [login, setLogin] = useState(false);
@@ -15,7 +17,10 @@ export default function Navbar() {
   const [userEmail, setUserEmail] = useState('');
   const [userPhone, setUserPhone] = useState("");
   const [userPassword, setUserPassword] = useState("");
+  const [cartLen, setCartLen] = useState(0);
 
+  let cartLength = 0;
+  
   async function getUser() {
     const token = localStorage.getItem("token");
     const res = await fetch("https://emarche-backend.herokuapp.com/home", {
@@ -26,15 +31,18 @@ export default function Navbar() {
     })
 
     const data = await res.json();
-    console.log(data.user.admin)
+    // console.log(data.user)
     if (data.user) {
+      setUserID(data.user._id);
       setLogin(true);
       setUsername(data.user.name);
       setUserEmail(data.user.email);
       setUserPhone(data.user.phone);
       setUserPassword(data.user.password);
+      // console.log(data.user.cart.length)
+      setCartLen(data.user.cart.length)
     }
-    if (data.user.admin === "true") {
+    if (data.user.admin === true) {
       setAdmin(true)
     }
   }
@@ -77,6 +85,7 @@ export default function Navbar() {
 
   useEffect(() => {
     getUser()
+
   }, [])
 
   let respNavbar = document.querySelector(".resp-nav");
@@ -97,11 +106,19 @@ export default function Navbar() {
     }
   }
 
+ 
   return (
     <div>
       <nav>
 
-        <div className="mainlogo">
+        {
+          login ?
+          <a href="" type="button" className='profile-btn profile-menu' data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+            <i class="fa-solid fa-bars"></i>
+          </a> : ""
+        }
+
+        <div className="mainlogo" style={login && window.innerWidth >= "420px" ? {marginLeft: "-7rem"} : {}}>
           <img src={logo} alt="" className='logoImg' />
           <div className='logoContent'>
             <h1>E Marché</h1>
@@ -128,8 +145,10 @@ export default function Navbar() {
                   <a href="" onClick={logoutBtn} type='button'>LOGOUT</a>
                 </li>
                 <li>
-                <a href='' type="button" className='profile-btn' data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">PROFILE</a>
-                  {/* <a href='' type="button" className='profile-btn' data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i class="fa-solid fa-user"></i></a> */}
+                {/* <a href='' type="button" className='profile-btn' data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">PROFILE</a> */}
+                </li>
+                <li>
+                  <a href={`/cart/${userID}`}><img src={cartLogo} className="cartImg" alt="" /><span>({cartLen})</span></a>
                 </li>
                 </>:
                 <li>
@@ -169,18 +188,22 @@ export default function Navbar() {
         </div>
 
             
-            <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
-              <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Hello, {username} {admin ? '(Admin)' : ''}</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            <div className="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+              <div className="offcanvas-header">
+                <h5 className="offcanvas-title" id="offcanvasWithBothOptionsLabel">Hello, {username} {admin ? '(Admin)' : ''}</h5>
+                <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
               </div>
-              <div class="offcanvas-body">
-                <h5>Profile Details</h5>
+              <div className="offcanvas-body">
+                {/* <h5>Profile Details</h5>
                 <ul>
                   <li>Name: {username}</li>
                   <li>Email: {userEmail}</li>
                   <li>Phone: {userPhone}</li>
                   <li>Password: {userPassword}</li>
+                </ul> */}
+                <ul>
+                  <a href={`/profile/${userID}`}><li>PROFILE</li></a>
+                  <a href={`/orders/${userID}`}><li>YOUR ORDERS</li></a>
                 </ul>
               </div>
             </div>
@@ -191,6 +214,7 @@ export default function Navbar() {
             <li><a href="/">HOME</a></li>
             <li><a href="/about">ABOUT</a></li>
             <li><a href="/contact">CONTACT</a></li>
+            
             {
               admin && login ? 
                 <li>
@@ -203,9 +227,11 @@ export default function Navbar() {
                 <li>
                   <a href="" onClick={logoutBtn} type='button'>LOGOUT</a>
                 </li>
-                  {/* <p>Hello, {username ? username : 'User'}</p> */}
                 <li>
-                  <a href='' type="button" className='profile-btn' data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i class="fa-solid fa-user"></i></a>
+                  <a href={`/cart/${userID}`}><img src={cartLogo} className="cartImg" alt="" /><span>({cartLen})</span></a>
+                </li>
+                <li>
+                  <a href='' type="button" className='profile-btn' data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">More options...</a>
                 </li>
                 </>:
                 <li>

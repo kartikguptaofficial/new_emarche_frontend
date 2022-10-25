@@ -31,8 +31,15 @@ export default function MainProducts() {
     const [newArrivals, setNewArrivals] = useState([]);
     const [screenWidth, setScreenWidth] = useState(7);
 
+    // async function newProduct() {
+    //     const res = await fetch("data.json");
+    //     const data = await res.json();
+    //     // console.log(data.data);
+    //     setNewArrivals(data.data)
+    // }
+    
     async function newProduct() {
-        const res = await fetch("data.json");
+        const res = await fetch("https://emarche-backend.herokuapp.com/products");
         const data = await res.json();
         // console.log(data.data);
         setNewArrivals(data.data)
@@ -48,9 +55,6 @@ export default function MainProducts() {
         document.title = "Home | E Marché";
     }, [])
 
-    const clothingProducts = newArrivals.filter((item) => {
-        return item.category === "clothing";
-    })
 
     const footwearProducts = newArrivals.filter((item) => {
         return item.category === "footwear";
@@ -64,24 +68,16 @@ export default function MainProducts() {
         return item.category === "mobile-accessories";
     })
 
-    const mensClothing = clothingProducts.filter((item) => {
-        return item.gender === "male";
+    const mensClothing = newArrivals.filter((item) => {
+        if(item.category === "clothing" && item.gender === "male"){
+            return item;
+        }
     })
     
-    const womensClothing = clothingProducts.filter((item) => {
-        return item.gender === "female";
-    })
-
-    const kidsClothing = clothingProducts.filter((item) => {
-        return item.gender === "kids";
-    })
-    
-    const menShoes = footwearProducts.filter((item) => {
-        return item.gender === "male";
-    })
-
-    const womenShoes = footwearProducts.filter((item) => {
-        return item.gender === "female";
+    const womensClothing = newArrivals.filter((item) => {
+        if(item.category === "clothing" && item.gender === "female"){
+            return item;
+        }
     })
 
 
@@ -134,12 +130,12 @@ export default function MainProducts() {
                         mensClothing.map((item) => {
                             return(
                                     <SwiperSlide>
-                                        <div className="category-product-card">
+                                        <div className="category-product-card" key={item._id}>
                                             <img src={item.img1} alt="" />
                                             <h6>{item.name}</h6>
                                             <p>₹    {item.sellingprice}</p>
                                             <div className="card-buttons">
-                                                <a href={`/product/${item.id}`}><i className="fa-solid fa-eye"></i>View Product</a>
+                                                <a href={`/product/${item._id}`}><i className="fa-solid fa-eye"></i>View Product</a>
                                             </div>
                                         </div>
                                     </SwiperSlide>
@@ -193,12 +189,12 @@ export default function MainProducts() {
                         womensClothing.map((item) => {
                             return(
                                     <SwiperSlide>
-                                        <div className="category-product-card">
+                                        <div className="category-product-card" key={item._id}>
                                             <img src={item.img1} alt="" />
                                             <h6>{item.name}</h6>
                                             <p>₹ {item.sellingprice}</p>
                                             <div className="card-buttons">
-                                                <a href={`/product/${item.id}`}><i className="fa-solid fa-eye"></i>View Product</a>
+                                                <a href={`/product/${item._id}`}><i className="fa-solid fa-eye"></i>View Product</a>
                                             </div>
                                         </div>
                                     </SwiperSlide>
@@ -251,12 +247,12 @@ export default function MainProducts() {
                             footwearProducts.map((item) => {
                                 return(
                                         <SwiperSlide>
-                                            <div className="category-product-card">
+                                            <div className="category-product-card" key={item._id}>
                                                 <img src={item.img1} alt="" />
                                                 <h6>{item.name}</h6>
                                                 <p>₹ {item.sellingprice}</p>
                                                 <div className="card-buttons">
-                                                    <a href={`/product/${item.id}`}><i className="fa-solid fa-eye"></i>View Product</a>
+                                                    <a href={`/product/${item._id}`}><i className="fa-solid fa-eye"></i>View Product</a>
                                                 </div>
                                             </div>
                                         </SwiperSlide>
@@ -306,12 +302,12 @@ export default function MainProducts() {
                         allWatches.map((item) => {
                             return(
                                     <SwiperSlide>
-                                        <div className="category-product-card">
+                                        <div className="category-product-card" key={item._id}>
                                             <img src={item.img1} alt="" />
                                             <h6>{item.name}</h6>
                                             <p>₹ {item.sellingprice}</p>
                                             <div className="card-buttons">
-                                                <a href={`/product/${item.id}`}><i className="fa-solid fa-eye"></i>View Product</a>
+                                                <a href={`/product/${item._id}`}><i className="fa-solid fa-eye"></i>View Product</a>
                                             </div>
                                         </div>
                                     </SwiperSlide>
@@ -364,12 +360,12 @@ export default function MainProducts() {
                         mobileAcc.map((item) => {
                             return(
                                     <SwiperSlide>
-                                        <div className="category-product-card">
+                                        <div className="category-product-card" key={item._id}>
                                             <img src={item.img1} alt="" />
                                             <h6>{item.name}</h6>
                                             <p>₹ {item.sellingprice}</p>
                                             <div className="card-buttons">
-                                                <a href={`/product/${item.id}`}><i className="fa-solid fa-eye"></i>View Product</a>
+                                                <a href={`/product/${item._id}`}><i className="fa-solid fa-eye"></i>View Product</a>
                                             </div>
                                         </div>
                                     </SwiperSlide>

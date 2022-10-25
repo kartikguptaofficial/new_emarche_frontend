@@ -1,0 +1,41 @@
+.orders-page{
+    width: 70%;
+    margin: 4rem auto;
+}
+
+.orders-page ul li{
+    display: flex;
+    margin-top: 1rem;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.4);
+    align-items: center;
+}
+
+.orders-page ul li img{
+    height: 5rem;
+    width: 5rem;
+}
+
+.order-details{
+    width: 100%;
+    margin-left: 2rem;
+}
+
+
+@media all and (max-width: 420px){
+    .orders-page{
+        width: 95%;
+    } 
+
+    .orders-page ul li img{
+        height: 4rem;
+        width: 4rem;
+    }
+
+    .order-details{
+        margin-left: 1rem;
+    }
+
+    .order-details h6{
+        font-size: 12px;
+    }
+}

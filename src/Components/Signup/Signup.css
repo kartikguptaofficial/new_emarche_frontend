@@ -31,3 +31,17 @@
     margin-left: 24rem; 
     text-decoration: none;
 }
+
+@media all and (max-width: 420px) {
+    .signup-page{
+        width: 100%;
+    }
+
+    .signup-page form{
+        width: 85%;
+    }
+
+    .signup-page a{
+        margin-left: 5rem;
+    }
+}

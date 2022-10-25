@@ -29,7 +29,7 @@ export default function About() {
             <div className="about-founders">
                 <h3>Founders</h3>
                 <div className="founders">
-                    <h6>Nipurn Jain</h6>
+                    {/* <h6>Nipurn Jain</h6> */}
                     <h6>Kartik Gupta</h6>
                 </div>
             </div>

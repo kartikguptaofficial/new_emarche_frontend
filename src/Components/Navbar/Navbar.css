@@ -9,7 +9,7 @@
 nav{
     height: 6rem;
     background-color: rgb(252 ,250,250);
-    padding: 0 5rem;
+    padding: 0 4rem;
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -17,11 +17,17 @@ nav{
     box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
 }
 
+.profile-menu{
+    color: black;
+    font-size: 1.8rem;
+}
+
 .mainlogo{
     display: flex;
     gap: 1rem;
     width: 30%;
     align-items: center;
+    /* margin-left: -7rem; */
 }
 
 .logoContent{
@@ -63,20 +69,21 @@ nav{
     text-decoration: none;
     color: rgb(110,100,100);
     font-weight: 600;
+    display: flex;
+}
+
+.cartImg{
+    height: 1.7rem;
 }
 
 .loginBtns{
     display: flex;
     align-items: center;
-
 }
-
 
 .modal-dialog{
     display: flex;
-    /* align-items: center; */
-    height: 25rem;
-    /* width: 100vh; */
+    height: 15rem;
 }
 
 .modal-dialog img{
@@ -104,6 +111,7 @@ nav{
     text-decoration: none;
 }
 
+
 .nav-elements i{
     display: none;
     color: rgb(100,100,100);
@@ -113,11 +121,40 @@ nav{
     display: none;
 }
 
+.offcanvas-body ul{
+    list-style: none;
+    margin: 0;
+}
+
+.offcanvas-body ul a{
+    text-decoration: none;
+    color: black;
+}
+
+.offcanvas-body ul li:hover{
+    background-color: rgb(250,250,250);
+}
+
+.offcanvas-body ul li{
+    padding: 1rem;
+    margin-top: 1rem;
+    margin-left: -2rem;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+    text-align: center;
+}
 
 @media all and (max-width: 420px){
     .nav-elements ul{
         display: none;
     }
+
+    .profile-menu{
+        display: none;
+    }
+
+    /* .mainlogo{
+        margin-left: 7rem;
+    } */
 
     .nav-elements i{
         display: block;

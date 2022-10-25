@@ -26,7 +26,7 @@ export default function Admin() {
     const [linkToProduct, setLinkToProduct] = useState("");
 
     const show = useParams();
-    console.log(show.show);
+    // console.log(show.show);
     const showPage = show.show;
     // setShowPage(show.show)
 
@@ -45,8 +45,17 @@ export default function Admin() {
         }
     }
 
+    const [totProd, setTotProd] = useState("");
+    
+    async function getData() {
+        const res = await fetch("https://emarche-backend.herokuapp.com/products");
+        const data = await res.json();
+        setTotProd(data.data.length);
+    }
+
     useEffect(() => {
-        document.title = "Admin Panel | E Marché"
+        document.title = "Admin Panel | E Marché";
+        getData();
     }, [])
         
 
@@ -79,7 +88,21 @@ export default function Admin() {
                                     <textarea name="description" required id="description" cols="30" rows="2" value={description} onChange={(e) => setDescription(e.target.value)}></textarea>
                                     <label htmlFor="costprice">Cost Price</label>
                                     <input type="number" required name='costprice' id='costprice' value={costprice} onChange={(e) => setcostPrice(e.target.value)} />
-                                    <label htmlFor="sellingprice">Selling Price</label>
+                                    {
+                                        costprice <= 300 && costprice > 0 ? 
+                                        <label htmlFor="sellingprice">Selling Price (Add Margin: {Math.ceil(costprice * 1/4)})</label>
+                                        : ''
+                                    }
+                                    {
+                                        costprice > 300 && costprice <= 800 ? 
+                                        <label htmlFor="sellingprice">Selling Price (Add Margin: {Math.ceil(costprice * 15/100)})</label>
+                                        : ''
+                                    }
+                                    {
+                                        costprice > 800 ? 
+                                        <label htmlFor="sellingprice">Selling Price (Add Margin: {Math.ceil(costprice * 1/10)})</label>
+                                        : ''
+                                    }
                                     <input type="number" required name='sellingprice' id='sellingprice' value={sellingprice} onChange={(e) => setSellingPrice(e.target.value)} />
                                     <label htmlFor="mrp">MRP</label>
                                     <input type="number" required name='mrp' id='mrp' value={mrp} onChange={(e) => setMrp(e.target.value)} />
@@ -150,7 +173,7 @@ export default function Admin() {
                                             <h6>Total Returns</h6>
                                         </div>
                                         <div className='products-circle'>
-                                            <h6 className='total-products'>45</h6>
+                                            <h6 className='total-products'>{totProd}</h6>
                                             <h6>Total Products</h6>
                                         </div>
                                     </div>

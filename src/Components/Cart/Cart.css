@@ -1,0 +1,141 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.cartPage{
+    display: flex;
+    width: 100%;
+    padding: 4rem 2rem;
+}
+
+.cartItems{
+    flex: 9;
+    padding: 0 2rem;
+    border-radius: 5px;
+}
+
+.cartItems ul{
+    list-style: none;
+}
+
+.cartItems ul li{
+    box-shadow: 2px 8px 58px -15px rgba(0,0,0,0.36);
+    -webkit-box-shadow: 2px 8px 58px -15px rgba(0,0,0,0.36);
+    -moz-box-shadow: 2px 8px 58px -15px rgba(0,0,0,0.36);
+    margin-top: 0.5rem;
+    padding: 1rem;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cartItems ul li img{
+    height: 5rem;
+    flex: 1;
+}
+
+.cartItem-details{
+    padding: 0.5rem 2rem;
+    flex: 9;
+}
+
+.cartItem-actions{
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cartItem-actions a{
+    margin-right: 0.5rem;
+}
+
+.cartTotals{
+    flex: 3;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.4);
+    border-radius: 8px;
+    padding: 2rem;
+}
+
+.cartTotals h5{
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+.cartTotals-calculations h6{
+    display: flex;
+    justify-content: space-between;
+}
+
+.cartTotals-calculations h6 span{
+    font-weight: 400;
+}
+
+.cartTotals h6{
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.cartTotals small{
+    /* width: 180px; */
+    font-size: 12px;
+    font-weight: 400;
+    position: absolute;
+    margin-top: -1rem;
+}
+
+.grand-total{
+    margin-top: 2rem;
+}
+
+.amount-payable{
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 2rem;
+}
+
+.amt-payable{
+    font-weight: bold;
+}
+
+.cartTotals-actions{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4rem;
+}
+
+.checkout-modal form{
+    display: flex;
+    align-items: center;
+}
+
+.checkout-modal form input{
+    margin-right: 1rem;
+}
+
+.checkout-modal small{
+    text-align: center;
+    margin-top: 1rem;
+}
+
+
+@media all and (max-width: 420px){
+    .cartPage{
+        display: block;
+        padding: 4rem 0;
+    }
+
+    .cartItems{
+        padding: 0.5rem;
+    }
+
+    .cartItems ul li img{
+        height: 4rem;
+    }
+
+    .cartItem-details h6{
+        font-size: 12px;
+    }
+}

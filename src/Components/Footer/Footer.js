@@ -52,7 +52,7 @@ const Footer = () => {
         <hr />
         <section className="lower-footer">
             <p>Copyright &copy; E Marche 2022 | All rights reserved</p>
-            <p>Created By: Kartik Gupta & Team</p>
+            <p>Created By: Kartik Gupta</p>
             <div className="social-icons">
                 <a href="http://www.instagram.com/emarche_official"><i class="fa-brands fa-instagram"></i></a>
                 <a href="/"><i class="fa-brands fa-facebook-f"></i></a>

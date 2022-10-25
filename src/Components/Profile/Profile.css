@@ -1,0 +1,31 @@
+.profile-page{
+    width: 70%;
+    margin: 3rem auto;
+}
+
+.user-greeting{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-greeting i{
+    font-size: 1.7rem;
+    margin-right: 2rem;
+}
+
+.user-greeting h5{
+    font-size: 25px;
+}
+
+.user-details ul{
+    list-style: none;
+}
+
+.user-details ul li{
+    margin-top: 1rem;
+    box-shadow: 4px 4px 8px rgba(0,0,0,0.4);
+    padding: 1rem;
+    text-align: center;
+    font-weight: 600;
+}
