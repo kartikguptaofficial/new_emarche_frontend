@@ -235,7 +235,7 @@ export default function Navbar() {
                 </li>
                 </>:
                 <li>
-                    <a href='' type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">LOGIN</a>
+                    <a href='/login' type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">LOGIN</a>
                 </li> 
             }
 
